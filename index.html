@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0B0E27">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="星际学园">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="manifest" href="manifest.json">
+    <title>星际学园 · 玩中学太空工作台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- 星空Canvas背景 -->
+    <canvas id="starfield"></canvas>
+
+    <!-- 升级动画遮罩 -->
+    <div id="levelup-overlay" class="levelup-overlay hidden">
+        <div class="levelup-content">
+            <div class="levelup-rocket">🚀</div>
+            <div class="levelup-stars" id="levelup-stars"></div>
+            <h2 class="levelup-title" id="levelup-title">升级了！</h2>
+            <p class="levelup-subtitle" id="levelup-subtitle"></p>
+            <button class="btn btn-primary levelup-btn" onclick="App.closeLevelup()">继续探索</button>
+        </div>
+    </div>
+
+    <!-- 勋章弹窗 -->
+    <div id="badge-overlay" class="badge-overlay hidden">
+        <div class="badge-popup">
+            <div class="badge-popup-icon" id="badge-popup-icon">🏆</div>
+            <h3 class="badge-popup-title" id="badge-popup-title"></h3>
+            <p class="badge-popup-desc" id="badge-popup-desc"></p>
+            <button class="btn btn-primary" onclick="App.closeBadgePopup()">太棒了！</button>
+        </div>
+        <div class="confetti-container" id="confetti-container"></div>
+    </div>
+
+    <!-- 顶部状态栏 -->
+    <header id="statusbar" class="statusbar hidden">
+        <div class="statusbar-left">
+            <span class="statusbar-avatar" id="statusbar-avatar">👨‍🚀</span>
+            <div class="statusbar-info">
+                <span class="statusbar-name" id="statusbar-name">宇航员</span>
+                <span class="statusbar-level" id="statusbar-level">Lv.1 见习探索者</span>
+            </div>
+        </div>
+        <div class="statusbar-center">
+            <span class="statusbar-score-label">星际积分</span>
+            <span class="statusbar-score" id="statusbar-score">0</span>
+        </div>
+        <div class="statusbar-right">
+            <button class="btn-icon" onclick="App.goHome()" title="返回母舰">🚀</button>
+        </div>
+    </header>
+
+    <!-- 面包屑 -->
+    <nav id="breadcrumb" class="breadcrumb hidden"></nav>
+
+    <!-- 主内容区 -->
+    <main id="app" class="app-container"></main>
+
+    <!-- 加载提示 -->
+    <div id="loading" class="loading">
+        <div class="loading-rocket">🚀</div>
+        <p>星际学园启动中...</p>
+    </div>
+
+    <script src="js/store.js"></script>
+    <script src="js/scoring.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/data/english-questions.js"></script>
+    <script src="js/data/math-questions.js"></script>
+    <script src="js/data/writing-frames.js"></script>
+    <script src="js/modules/home.js"></script>
+    <script src="js/modules/badge-hall.js"></script>
+    <script src="js/modules/profile.js"></script>
+    <script src="js/modules/english.js"></script>
+    <script src="js/modules/math.js"></script>
+    <script src="js/modules/writing.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
